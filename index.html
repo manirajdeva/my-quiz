@@ -10,6 +10,12 @@
             margin: 20px;
             text-align: center;
         }
+		.logo {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            width: 100px; /* Adjust width as needed */
+        }
         .header {
             font-size: 24px;
             font-weight: bold;
@@ -20,7 +26,7 @@
         .question {
             margin-bottom: 15px;
             padding: 10px;
-            border: 2px solid #000;
+            border: 2px solid orange;
             border-radius: 5px;
             background-color: #f9f9f9;
             text-align: left;
@@ -45,6 +51,7 @@
 </head>
 <body>
     <div class="header">NDR INFOTECH</div>
+	 <img src="Capture.png" alt="Company Logo" class="logo"> <C:\Users\Maniraj_deva\Desktop\Capture.PNG>
     <h2>Snowflake Snow Pro Core Certification Quiz</h2>
     <form id="quizForm">
         
@@ -81,8 +88,158 @@
                 <label><input type="radio" name="q5" value="Multi-factor Authentication (MFA)"> Multi-factor Authentication (MFA)</label>
                 <label><input type="radio" name="q5" value="Object-level access control"> Object-level access control</label>
             </div>
-           
-           <button type="button" onclick="nextPage(2)">Next</button>
+			<div class="question">
+				<p>6. How would you determine the size of the virtual warehouse used for a task?</p>
+				<label><input type="radio" name="q6" value="Root task may be executed concurrently, so leave margins in execution window"> Root task may be executed concurrently (i.e. multiple instances), it is recommended to leave some margins in the execution window to avoid missing instances of execution</label>
+				<br>
+				<label><input type="radio" name="q6" value="Querying the size of the stream content helps determine warehouse size"> Querying (select) the size of the stream content would help determine the warehouse size. For example, if querying large stream content, use a larger warehouse size</label>
+				<br>
+				<label><input type="radio" name="q6" value="Test run stored procedure separately to size compute resources"> If using the stored procedure to execute multiple SQL statements, it's best to test run the stored procedure separately to size the compute resource first</label>
+				<br>
+				<label><input type="radio" name="q6" value="Use Multi-cluster Warehouse (MCW) for automatic concurrency handling"> Since task infrastructure is based on running the task body on schedule, it's recommended to configure the virtual warehouse for automatic concurrency handling using Multi-cluster warehouse (MCW) to match the task schedule</label>
+			</div>
+			<div class="question">
+				<p>7. The Information Schema and Account Usage Share provide storage information for which of the following objects? (Choose three.)</p>
+				<label><input type="checkbox" name="q7" value="Users"> Users</label>
+				<br>
+				<label><input type="checkbox" name="q7" value="Tables"> Tables</label>
+				<br>
+				<label><input type="checkbox" name="q7" value="Databases"> Databases</label>
+				<br>
+				<label><input type="checkbox" name="q7" value="Internal Stages"> Internal Stages</label>
+			</div>
+			<div class="question">
+				<p>8. True or False: Loading data into Snowflake requires that source data files be no larger than 16MB.</p>
+				<label><input type="radio" name="q8" value="True"> True</label>
+				<br>
+				<label><input type="radio" name="q8" value="False"> False</label>
+			</div>
+			
+			<div class="question">
+				<p>9. True or False: A Virtual Warehouse can be resized while suspended.</p>
+				<label><input type="radio" name="q9" value="True"> True</label>
+				<br>
+				<label><input type="radio" name="q9" value="False"> False</label>
+			</div>
+			
+			<div class="question">
+				<p>10. True or False: When you create a custom role, it is a best practice to immediately grant that role to ACCOUNTADMIN.</p>
+				<label><input type="radio" name="q10" value="True"> True</label>
+				<br>
+				<label><input type="radio" name="q10" value="False"> False</label>
+			</div>           
+				<div class="question">
+				<p>11. What are two ways to create and manage Data Shares in Snowflake? (Choose two.)</p>
+				<label><input type="checkbox" name="q11" value="Snowflake Web Interface (UI)"> Via the Snowflake Web Interface (UI)</label>
+				<br>
+				<label><input type="checkbox" name="q11" value="data_share=true parameter"> Via the data_share=true parameter</label>
+				<br>
+				<label><input type="checkbox" name="q11" value="SQL commands"> Via SQL commands</label>
+				<br>
+				<label><input type="checkbox" name="q11" value="Virtual Warehouses"> Via Virtual Warehouses</label>
+			</div>
+		
+			<div class="question">
+				<p>12. True or False: Fail-safe can be disabled within a Snowflake account.</p>
+				<label><input type="radio" name="q12" value="True"> True</label>
+				<br>
+				<label><input type="radio" name="q12" value="False"> False</label>
+			</div>
+		
+			<div class="question">
+				<p>13. True or False: It is possible for a user to run a query against the query result cache without requiring an active Warehouse.</p>
+				<label><input type="radio" name="q13" value="True"> True</label>
+				<br>
+				<label><input type="radio" name="q13" value="False"> False</label>
+			</div>
+		
+			<div class="question">
+				<p>14. A virtual warehouse auto-suspend and auto-resume settings apply to which of the following?</p>
+				<label><input type="radio" name="q14" value="Primary cluster"> The primary cluster in the virtual warehouse</label>
+				<br>
+				<label><input type="radio" name="q14" value="Entire virtual warehouse"> The entire virtual warehouse</label>
+				<br>
+				<label><input type="radio" name="q14" value="Database"> The database in which the virtual warehouse resides</label>
+				<br>
+				<label><input type="radio" name="q14" value="Queries"> The Queries currently being run on the virtual warehouse</label>
+			</div>
+		
+			<div class="question">
+				<p>15. Which of the following Snowflake features provide continuous data protection automatically? (Select TWO)</p>
+				<label><input type="checkbox" name="q15" value="Internal stages"> Internal stages</label>
+				<br>
+				<label><input type="checkbox" name="q15" value="Incremental backups"> Incremental backups</label>
+				<br>
+				<label><input type="checkbox" name="q15" value="Time Travel"> Time Travel</label>
+				<br>
+				<label><input type="checkbox" name="q15" value="Zero-copy clones"> Zero-copy clones</label>
+				<br>
+				<label><input type="checkbox" name="q15" value="Fail-safe"> Fail-safe</label>
+			</div>
+		
+			<div class="question">
+				<p>16. Which of the following conditions must be met in order to return results from the results cache? (Select TWO)</p>
+				<label><input type="checkbox" name="q16" value="User privileges"> The user has the appropriate privileges on the objects associated with the query</label>
+				<br>                
+				<label><input type="checkbox" name="q16" value="Reclustered micro-partitions"> Micro-partitions have been reclustered since the query was last run</label>
+				<br>                
+				<label><input type="checkbox" name="q16" value="Same virtual warehouse"> The new query is run using the same virtual warehouse as the previous query</label>
+				<br>                
+				<label><input type="checkbox" name="q16" value="User Defined Function (UDF)"> The query includes a User Defined Function (UDF)</label>
+				<br>                
+				<label><input type="checkbox" name="q16" value="Run within 24 hours"> The query has been run within 24 hours of the previously-run query</label>
+			</div>
+		
+			<div class="question">
+				<p>17. Which of the following are benefits of micro-partitioning? (Select TWO)</p>
+				<label><input type="checkbox" name="q17" value="No overlapping partitions"> Micro-partitions cannot overlap in their range of values</label>
+				<br>
+				<label><input type="checkbox" name="q17" value="Immutable objects"> Micro-partitions are immutable objects that support the use of Time Travel.</label>
+				<br>
+				<label><input type="checkbox" name="q17" value="Reduce I/O"> Micro-partitions can reduce the amount of I/O from object storage to virtual warehouses</label>
+				<br>
+				<label><input type="checkbox" name="q17" value="Sorted order"> Rows are automatically stored in sorted order within micro-partitions</label>
+				<br>
+				<label><input type="checkbox" name="q17" value="Schema-based partitions"> Micro-partitions can be defined on a schema-by-schema basis</label>
+			</div>
+		
+			<div class="question">
+				<p>18. What is the minimum Snowflake edition required to create a materialized view?</p>
+				<label><input type="radio" name="q18" value="Standard Edition"> Standard Edition</label>
+				<br>
+				<label><input type="radio" name="q18" value="Enterprise Edition"> Enterprise Edition</label>
+				<br>
+				<label><input type="radio" name="q18" value="Business Critical Edition"> Business Critical Edition</label>
+				<br>
+				<label><input type="radio" name="q18" value="Virtual Private Snowflake Edition"> Virtual Private Snowflake Edition</label>
+			</div>
+		
+			<div class="question">
+				<p>19. What happens to the underlying table data when a CLUSTER BY clause is added to a Snowflake table?</p>
+				<label><input type="radio" name="q19" value="Hashed by cluster key"> Hashed by cluster key</label>
+				<br>
+				<label><input type="radio" name="q19" value="Larger partitions"> Larger partitions</label>
+				<br>
+				<label><input type="radio" name="q19" value="Smaller partitions"> Smaller partitions</label>
+				<br>
+				<label><input type="radio" name="q19" value="Colocated data"> Colocated data</label>
+			</div>
+		
+			<div class="question">
+				<p>20. Which of the following are valid methods for authenticating users for access into Snowflake? (Select THREE)</p>
+				<label><input type="checkbox" name="q20" value="SCIM"> SCIM</label>
+				<br>
+				<label><input type="checkbox" name="q20" value="Federated authentication"> Federated authentication</label>
+				<br>
+				<label><input type="checkbox" name="q20" value="TLS 1.2"> TLS 1.2</label>
+				<br>
+				<label><input type="checkbox" name="q20" value="Key-pair authentication"> Key-pair authentication</label>
+				<br>
+				<label><input type="checkbox" name="q20" value="OAuth"> OAuth</label>
+				<br>
+				<label><input type="checkbox" name="q20" value="OCSP authentication"> OCSP authentication</label>
+			</div>
+	 <button type="button" onclick="nextPage(2)">Next</button>
         </div>
         
         <div class="page" id="page2">
@@ -104,7 +261,28 @@
         }
         
         function checkAnswers() {
-            let answers = { q1: "7 days", q2: "True", q3: "CSV", q4: "False", q5: "Column-level security" };
+				let answers = {
+					q1: "7 days",
+					q2: "True",
+					q3: "CSV",
+					q4: "False",
+					q5: "Column-level security",
+					q6: "Querying the size of the stream content helps determine warehouse size",
+					q7: ["Tables", "Databases", "Internal Stages"], // Multiple correct answers
+					q8: "False",
+					q9: "False",
+					q10: "False",
+					q11: ["Snowflake Web Interface (UI)", "SQL commands"],
+					q12: "False",
+					q13: "True",
+					q14: "Entire virtual warehouse",
+					q15: ["Time Travel", "Fail-safe"],
+					q16: ["User privileges", "Same virtual warehouse"],
+					q17: ["Immutable objects", "Reduce I/O"],
+					q18: "Enterprise Edition",
+					q19: "Colocated data",
+					q20: ["Federated authentication", "Key-pair authentication", "OAuth"]
+				};
             let score = 0;
             let resultText = "<h3>Quiz Results</h3>";
             
@@ -116,7 +294,7 @@
                     if (isCorrect) score++;
                 }
             });
-            resultText += `<p class="result">Your score: ${score} / 5</p>`;
+            resultText += `<p class="result">Your score: ${score} / 20</p>`;
             document.getElementById("result").innerHTML = resultText;
         }
     </script>
