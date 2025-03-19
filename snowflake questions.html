@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowflake COF-C02 Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Century Gothic', sans-serif;
+            margin-bottom: 20px;
+            color: blue;
+        }
+        .question {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">NDR INFOTECH</div>
+    <h2>Snowflake Snow Pro Core Certification Quiz</h2>
+    <form id="quizForm">
+        
+        <div class="page active" id="page1">
+            <div class="question">
+                <p>1. The fail-safe retention period is how many days?</p>
+                <label><input type="radio" name="q1" value="1 day"> 1 day</label>
+                <label><input type="radio" name="q1" value="7 days"> 7 days</label>
+                <label><input type="radio" name="q1" value="45 days"> 45 days</label>
+                <label><input type="radio" name="q1" value="90 days"> 90 days</label>
+            </div>
+            <div class="question">
+                <p>2. True or False: A 4X-Large Warehouse may, at times, take longer to provision than a X-Small Warehouse.</p>
+                <label><input type="radio" name="q2" value="True"> True</label>
+                <label><input type="radio" name="q2" value="False"> False</label>
+            </div>
+            <div class="question">
+                <p>3. What is the default File Format used in the COPY command if one is not specified?</p>
+                <label><input type="radio" name="q3" value="CSV"> CSV</label>
+                <label><input type="radio" name="q3" value="JSON"> JSON</label>
+                <label><input type="radio" name="q3" value="Parquet"> Parquet</label>
+                <label><input type="radio" name="q3" value="XML"> XML</label>
+            </div>
+            
+            <div class="question">
+                <p>4. True or False: Fail-safe can be disabled within a Snowflake account.</p>
+                <label><input type="radio" name="q4" value="True"> True</label>
+                <label><input type="radio" name="q4" value="False"> False</label>
+            </div>
+            <div class="question">
+                <p>5. Which feature is only available in the Enterprise or higher editions of Snowflake?</p>
+                <label><input type="radio" name="q5" value="Column-level security"> Column-level security</label>
+                <label><input type="radio" name="q5" value="SOC 2 type II certification"> SOC 2 type II certification</label>
+                <label><input type="radio" name="q5" value="Multi-factor Authentication (MFA)"> Multi-factor Authentication (MFA)</label>
+                <label><input type="radio" name="q5" value="Object-level access control"> Object-level access control</label>
+            </div>
+           
+           <button type="button" onclick="nextPage(2)">Next</button>
+        </div>
+        
+        <div class="page" id="page2">
+            <button type="button" onclick="prevPage(1)">Previous</button>
+            <button type="button" onclick="checkAnswers()">Submit</button>
+        </div>
+    </form>
+    <p class="result" id="result"></p>
+
+    <script>
+        function nextPage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+        
+        function prevPage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+        
+        function checkAnswers() {
+            let answers = { q1: "7 days", q2: "True", q3: "CSV", q4: "False", q5: "Column-level security" };
+            let score = 0;
+            let resultText = "<h3>Quiz Results</h3>";
+            
+            Object.keys(answers).forEach(q => {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected) {
+                    let isCorrect = selected.value === answers[q];
+                    resultText += `<p class="${isCorrect ? 'correct' : 'incorrect'}">Q${q.slice(1)}: Your answer: ${selected.value} | Correct answer: ${answers[q]}</p>`;
+                    if (isCorrect) score++;
+                }
+            });
+            resultText += `<p class="result">Your score: ${score} / 5</p>`;
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
