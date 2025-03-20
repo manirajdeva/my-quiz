@@ -51,7 +51,7 @@
 </head>
 <body>
     <div class="header">NDR INFOTECH</div>
-	 <img src="capture.png" alt="Company Logo" class="logo"> <capture.png>
+			<img src="capture.png" alt="Company Logo" class="logo"> <capture.png>
     <h2>Snowflake Snow Pro Core Certification Quiz</h2>
     <form id="quizForm">
         
@@ -239,6 +239,117 @@
 				<br>
 				<label><input type="checkbox" name="q20" value="OCSP authentication"> OCSP authentication</label>
 			</div>
+			<div class="question">
+				<p>21. During periods of warehouse contention which parameter controls the maximum length of time a warehouse will hold a query for processing?</p>
+				<label><input type="radio" name="q21" value="STATEMENT_TIMEOUT__IN__SECONDS"> STATEMENT_TIMEOUT__IN__SECONDS</label>
+				<br>
+				<label><input type="radio" name="q21" value="STATEMENT_QUEUED_TIMEOUT_IN_SECONDS"> STATEMENT_QUEUED_TIMEOUT_IN_SECONDS</label>
+				<br>
+				<label><input type="radio" name="q21" value="MAX_CONCURRENCY__LEVEL"> MAX_CONCURRENCY__LEVEL</label>
+				<br>
+				<label><input type="radio" name="q21" value="QUERY_TIMEOUT_IN_SECONDS"> QUERY_TIMEOUT_IN_SECONDS</label>
+			</div>
+			
+			<div class="question">
+				<p>22. Which of the following indicates that it may be appropriate to use a clustering key for a table? (Select TWO).</p>
+				<label><input type="checkbox" name="q22" value="The table contains a column that has very low cardinality"> The table contains a column that has very low cardinality</label>
+				<br>
+				<label><input type="checkbox" name="q22" value="DML statements that are being issued against the table are blocked"> DML statements that are being issued against the table are blocked</label>
+				<br>
+				<label><input type="checkbox" name="q22" value="The table has a small number of micro-partitions"> The table has a small number of micro-partitions</label>
+				<br>
+				<label><input type="checkbox" name="q22" value="Queries on the table are running slower than expected"> Queries on the table are running slower than expected</label>
+				<br>
+				<label><input type="checkbox" name="q22" value="The clustering depth for the table is large"> The clustering depth for the table is large</label>
+			</div>
+			
+			<div class="question">
+				<p>23. Which Snowflake object enables loading data from files as soon as they are available in a cloud storage location?</p>
+				<label><input type="radio" name="q23" value="Pipe"> Pipe</label>
+				<br>
+				<label><input type="radio" name="q23" value="External stage"> External stage</label>
+				<br>
+				<label><input type="radio" name="q23" value="Task"> Task</label>
+				<br>
+				<label><input type="radio" name="q23" value="Stream"> Stream</label>
+			</div>
+			
+			<div class="question">
+				<p>24. A user needs to create a materialized view in the schema MYDB.MYSCHEMA. Which statements will provide this access?</p>
+				<label><input type="radio" name="q24" value="Option1"> GRANT ROLE MYROLE TO USER USER1; CREATE MATERIALIZED VIEW ON SCHEMA MYDB MYSCHEMA TO ROLE MYROLE;</label>
+				<br>
+				<label><input type="radio" name="q24" value="Option2"> GRANT ROLE MYROLE TO USER USER1; CREATE MATERIALIZED VIEW ON SCHEMA MYDB MYSCHEMA TO USER USER1;</label>
+				<br>
+				<label><input type="radio" name="q24" value="Option3"> GRANT ROLE MYROLE TO USER USER1; CREATE MATERIALIZED VIEW ON SCHEMA MYDB MYSCHEMA TO USER1;</label>
+				<br>
+				<label><input type="radio" name="q24" value="Option4"> GRANT ROLE MYROLE TO USER USER1; CREATE MATERIALIZED VIEW ON SCHEMA MYDB MYSCHEMA TO MYROLE;</label>
+			</div>
+			
+			<div class="question">
+				<p>25. What is the default character set used when loading CSV files into Snowflake?</p>
+				<label><input type="radio" name="q25" value="UTF-8"> UTF-8</label>
+				<br>
+				<label><input type="radio" name="q25" value="UTF-16"> UTF-16</label>
+				<br>
+				<label><input type="radio" name="q25" value="ISO S859-1"> ISO S859-1</label>
+				<br>
+				<label><input type="radio" name="q25" value="ANSI_X3.A"> ANSI_X3.A</label>
+			</div>
+			
+			<div class="question">
+				<p>26. A sales table FCT_SALES has 100 million records. The following Query was executed: SELECT COUNT (1) FROM FCT_SALES; How did Snowflake fulfill this query?</p>
+				<label><input type="radio" name="q26" value="Result cache">Result cache</label>
+				<br>
+				<label><input type="radio" name="q26" value="Warehouse cache"> Warehouse cache</label>
+				<br>
+				<label><input type="radio" name="q26" value="Micro-partition"> Micro-partition</label>
+				<br>
+				<label><input type="radio" name="q26" value="Metadata"> Metadata</label>
+			</div>
+			
+			<div class="question">
+				<p>27. Which cache type is used to cache data output from SQL queries?</p>
+				<label><input type="radio" name="q27" value="Metadata cache"> Metadata cache</label>
+				<br>
+				<label><input type="radio" name="q27" value="Result cache"> Result cache</label>
+				<br>
+				<label><input type="radio" name="q27" value="Remote cache"> Remote cache</label>
+				<br>
+				<label><input type="radio" name="q27" value="Local file cache"> Local file cache</label>
+			</div>
+			
+			<div class="question">
+				<p>28. What is a key feature of Snowflake architecture?</p>
+				<label><input type="radio" name="q28" value="Zero-copy cloning creates a mirror copy of a database that updates with the original"> Zero-copy cloning creates a mirror copy of a database that updates with the original</label>
+				<br>
+				<label><input type="radio" name="q28" value="Software updates are automatically applied on a quarterly basis"> Software updates are automatically applied on a quarterly basis</label>
+				<br>
+				<label><input type="radio" name="q28" value="Snowflake eliminates resource contention with its virtual warehouse implementation"> Snowflake eliminates resource contention with its virtual warehouse implementation</label>
+				<br>
+				<label><input type="radio" name="q28" value="Multi-cluster warehouses allow users to run a query that spans across multiple clusters"> Multi-cluster warehouses allow users to run a query that spans across multiple clusters</label>
+			</div>
+			
+			<div class="question">
+				<p>29. What is a limitation of a Materialized View?</p>
+				<label><input type="radio" name="q29" value="A Materialized View cannot support any aggregate functions"> A Materialized View cannot support any aggregate functions</label>
+				<br>
+				<label><input type="radio" name="q29" value="A Materialized View can only reference up to two tables"> A Materialized View can only reference up to two tables</label>
+				<br>
+				<label><input type="radio" name="q29" value="A Materialized View cannot be joined with other tables"> A Materialized View cannot be joined with other tables</label>
+				<br>
+				<label><input type="radio" name="q29" value="A Materialized View cannot be defined with a JOIN"> A Materialized View cannot be defined with a JOIN</label>
+			</div>
+			<div class="question">
+				<p>30. What features does Snowflake Time Travel enable?</p>
+				<label><input type="radio" name="q30" value="Querying data-related objects that were created within the past 365 days"> Querying data-related objects that were created within the past 365 days</label>
+				<br>
+				<label><input type="radio" name="q30" value="Restoring data-related objects that have been deleted within the past 90 days"> Restoring data-related objects that have been deleted within the past 90 days</label>
+				<br>
+				<label><input type="radio" name="q30" value="Conducting point-in-time analysis for BI reporting"> Conducting point-in-time analysis for BI reporting</label>
+				<br>
+				<label><input type="radio" name="q30" value="Analyzing data usage/manipulation over all periods of time"> Analyzing data usage/manipulation over all periods of time</label>
+			</div>
+
 	 <button type="button" onclick="nextPage(2)">Next</button>
         </div>
         
@@ -262,27 +373,37 @@
         
         function checkAnswers() {
 				let answers = {
-					q1: "7 days",
-					q2: "True",
-					q3: "CSV",
-					q4: "False",
-					q5: "Column-level security",
-					q6: "Querying the size of the stream content helps determine warehouse size",
-					q7: ["Tables", "Databases", "Internal Stages"], // Multiple correct answers
-					q8: "False",
-					q9: "False",
-					q10: "False",
-					q11: ["Snowflake Web Interface (UI)", "SQL commands"],
-					q12: "False",
-					q13: "True",
-					q14: "Entire virtual warehouse",
-					q15: ["Time Travel", "Fail-safe"],
-					q16: ["User privileges", "Same virtual warehouse"],
-					q17: ["Immutable objects", "Reduce I/O"],
-					q18: "Enterprise Edition",
-					q19: "Colocated data",
-					q20: ["Federated authentication", "Key-pair authentication", "OAuth"]
-				};
+						q1: "7 days",
+						q2: "True",
+						q3: "CSV",
+						q4: "False",
+						q5: "Column-level security",
+						q6: "Querying the size of the stream content helps determine warehouse size",
+						q7: ["Tables", "Databases", "Internal Stages"],
+						q8: "False",
+						q9: "False",
+						q10: "False",
+						q11: ["Snowflake Web Interface (UI)", "SQL commands"],
+						q12: "False",
+						q13: "True",
+						q14: "Entire virtual warehouse",
+						q15: ["Time Travel", "Fail-safe"],
+						q16: ["User privileges", "Same virtual warehouse"],
+						q17: ["Immutable objects", "Reduce I/O"],
+						q18: "Enterprise Edition",
+						q19: "Colocated data",
+						q20: ["Federated authentication", "Key-pair authentication", "OAuth"],
+						q21: "STATEMENT_QUEUED_TIMEOUT_IN_SECONDS",
+						q22: ["Queries on the table are running slower than expected", " The clustering depth for the table is large"],
+						q23: "Pipe",
+						q24: "Option4",
+						q25: "UTF-8",
+						q26: "Metadata",
+						q27: "Result cache",
+						q28: "Snowflake eliminates resource contention with its virtual warehouse implementation",
+						q29: "A Materialized View cannot be defined with a JOIN"
+						q30: "Restoring data-related objects that have been deleted within the past 90 days"
+					};
             let score = 0;
             let resultText = "<h3>Quiz Results</h3>";
             
@@ -294,7 +415,7 @@
                     if (isCorrect) score++;
                 }
             });
-            resultText += `<p class="result">Your score: ${score} / 20</p>`;
+            resultText += `<p class="result">Your score: ${score} / 30</p>`;
             document.getElementById("result").innerHTML = resultText;
         }
     </script>
