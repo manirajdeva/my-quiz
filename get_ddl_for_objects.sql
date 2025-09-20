@@ -1,3 +1,6 @@
+use database sample123;
+use schema sample_sch;
+
 --create temp table --
 CREATE OR REPLACE TABLE ALL_OBJECT_DDLS (
     OBJECT_TYPE   STRING,
