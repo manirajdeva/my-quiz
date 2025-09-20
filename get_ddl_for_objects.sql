@@ -1,4 +1,4 @@
---create temp table
+--create temp table --
 CREATE OR REPLACE TABLE ALL_OBJECT_DDLS (
     OBJECT_TYPE   STRING,
     DATABASE_NAME STRING,
