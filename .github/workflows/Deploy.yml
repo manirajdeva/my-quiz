@@ -3,7 +3,7 @@ name: Schemachange Deploy
 on:
   push:
     branches:
-      - cpe_int   # change to cpe_int if you want to test there
+      - cpe_int   # runs only when pushing to cpe_int branch
 
 jobs:
   schemachange:
