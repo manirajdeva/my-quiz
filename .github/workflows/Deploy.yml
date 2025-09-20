@@ -25,7 +25,7 @@ jobs:
       - name: Create snowsql config
         run: |
           mkdir -p ~/.snowsql
-          cat > ~/.snowsql/config <<'EOF'
+          cat > ~/.snowsql/config << "EOF"
 [connections.myconn]
 accountname = ${SNOWFLAKE_ACCOUNT}
 username = ${SNOWFLAKE_USER}
