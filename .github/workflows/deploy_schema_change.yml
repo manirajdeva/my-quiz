@@ -1,0 +1,23 @@
+name: Schemachange Deploy
+
+on:
+  push:
+    branches:
+      - cpe_int   # workflow runs only when pushing to this branch
+
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test Snowflake connection
+        run: |
+          snowsql -a ${{ secrets.SNOWFLAKE_ACCOUNT }} \
+                  -u ${{ secrets.SNOWFLAKE_USER }} \
+                  -w ${{ secrets.SNOWFLAKE_WAREHOUSE }} \
+                  -d ${{ secrets.SNOWFLAKE_DATABASE }} \
+                  -s ${{ secrets.SNOWFLAKE_SCHEMA }} \
+                  --private-key-path ~/.ssh/snowflake_key.pem \
+                  -q "SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_VERSION();"
