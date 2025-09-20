@@ -56,3 +56,7 @@ while (result.next()) {
 
 return 'Inserted ' + inserted + ' table DDLs into ALL_OBJECT_DDLS';
 $$;
+
+
+--call proceduere
+call LOAD_TABLE_DDLS('sample123');
